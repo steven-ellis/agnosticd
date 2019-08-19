@@ -8,7 +8,7 @@
     codeready_project: "{{ project_name }}-{{ guid }}"
 
 - name: Remove user from developer group - (remove ability to create projects)
-  command: "oadm groups remove-users {{item}} {{ocp_username}}"
+  command: "oc adm groups remove-users {{item}} {{ocp_username}}"
   register: groupadd_register
   with_items: "{{ocp_user_groups}}"
   when:
